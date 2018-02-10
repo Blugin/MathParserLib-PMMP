@@ -21,11 +21,11 @@ class MathParser extends PluginBase{
     /**
      * @param string $expression
      *
-     * @return double
+     * @return float
      */
-    public static function parse(string $expression) : double{
+    public static function parse(string $expression) : float{
         $parser = new StdMathParser();
-        return (double) $parser->parse($expression);
+        return (float) $parser->parse($expression);
     }
 
     /** @var PluginCommand */
