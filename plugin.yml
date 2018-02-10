@@ -1,0 +1,14 @@
+---
+name:             MathParserLib
+main:             presentkim\mathparser\MathParser
+version:          1.0.0
+api:              [3.0.0, 3.0.0-ALPHA10, 3.0.0-ALPHA11]
+author:           PresentKim
+website:          https://github.com/PMMPPlugin/MathParser
+description:      A plugin for math-parser lib
+
+permissions:
+  math.cmd:
+    description:  MathParser main command
+    default:      true
+...

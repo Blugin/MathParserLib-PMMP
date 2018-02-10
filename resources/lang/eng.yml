@@ -1,0 +1,8 @@
+---
+mathparser-name: "MathParser"
+
+command-math: "mathparser"
+command-math@usage: "/math"
+command-math@description: "Main command of MathParser"
+command-math@aliases: ["calc"]
+...
