@@ -43,6 +43,7 @@ class MathParser extends PluginBase{
     public function onLoad() : void{
         if (self::$instance === null) {
             self::$instance = $this;
+            Translation::loadFromResource($this->getResource('lang/eng.yml'), true);
         }
     }
 
