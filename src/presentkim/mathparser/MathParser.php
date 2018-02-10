@@ -2,6 +2,7 @@
 
 namespace presentkim\mathparser;
 
+use MathParser\Interpreting\Evaluator;
 use pocketmine\command\PluginCommand;
 use pocketmine\plugin\PluginBase;
 use MathParser\StdMathParser;
@@ -21,11 +22,16 @@ class MathParser extends PluginBase{
     /**
      * @param string $expression
      *
+     * @param array  $variables
+     *
      * @return float
      */
-    public static function parse(string $expression) : float{
+    public static function parse(string $expression, array $variables = []) : float{
         $parser = new StdMathParser();
-        return (float) $parser->parse($expression);
+        $AST = $parser->parse($expression);
+
+        $evaluator = new Evaluator($variables);
+        return (float) $AST->accept($evaluator);
     }
 
     /** @var PluginCommand */
