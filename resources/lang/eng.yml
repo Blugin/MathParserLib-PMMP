@@ -5,5 +5,6 @@ command-math: "math"
 command-math@usage: "/math <expression>"
 command-math@description: "Main command of MathParser"
 command-math@success: "Result : {%0}"
+command-math@failure: "{%0}"
 command-math@aliases: ["calc"]
 ...
