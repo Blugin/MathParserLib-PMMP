@@ -14,6 +14,8 @@ use SplStack;
  *
  * @see http://en.wikipedia.org/wiki/Shunting-yard_algorithm
  * @author Adrean Boyadzhiev (netforce) <adrean.boyadzhiev@gmail.com>
+ * @website https://github.com/aboyadzhiev/php-math-parser
+ * @license https://opensource.org/licenses/MIT MIT
  */
 class ShuntingYard implements TranslationStrategyInterface
 {

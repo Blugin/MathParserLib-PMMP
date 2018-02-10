@@ -6,6 +6,8 @@ namespace Math;
  * Value object representing one operator of mathematical expression.
  *
  * @author Adrean Boyadzhiev (netforce) <adrean.boyadzhiev@gmail.com>
+ * @website https://github.com/aboyadzhiev/php-math-parser
+ * @license https://opensource.org/licenses/MIT MIT
  */
 class Operator extends Token
 {
