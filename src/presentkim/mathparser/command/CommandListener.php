@@ -29,11 +29,6 @@ class CommandListener implements CommandExecutor{
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
         $expression = implode(' ', $args);
         if (!empty($expression)) {
-            try{
-                $sender->sendMessage(Translation::translate('command-math@success', Plugin::getParser()->evaluate($expression)));
-            }catch(\InvalidArgumentException $exception){
-                $sender->sendMessage(Translation::translate('command-math@failure', $exception->getMessage()));
-            }
             return true;
         }
         return false;
