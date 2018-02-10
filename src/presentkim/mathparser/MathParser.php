@@ -4,6 +4,7 @@ namespace presentkim\mathparser;
 
 use pocketmine\command\PluginCommand;
 use pocketmine\plugin\PluginBase;
+use Math\Parser;
 use presentkim\mathparser\command\CommandListener;
 use presentkim\mathparser\util\Translation;
 
@@ -12,9 +13,17 @@ class MathParser extends PluginBase{
     /** @var self */
     private static $instance = null;
 
+    /** @var Parser */
+    private static $parser = null;
+
     /** @return self */
     public static function getInstance() : self{
         return self::$instance;
+    }
+
+    /** @return Parser */
+    public static function getParser() : Parser{
+        return self::$parser;
     }
 
     /** @var PluginCommand */
@@ -23,6 +32,7 @@ class MathParser extends PluginBase{
     public function onLoad() : void{
         if (self::$instance === null) {
             self::$instance = $this;
+            self::$parser = new Parser();
         }
     }
 
