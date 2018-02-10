@@ -1,8 +1,9 @@
 ---
 mathparser-name: "MathParser"
 
-command-math: "mathparser"
-command-math@usage: "/math"
+command-math: "math"
+command-math@usage: "/math <expression>"
 command-math@description: "Main command of MathParser"
+command-math@success: "Result : {%0}"
 command-math@aliases: ["calc"]
 ...
