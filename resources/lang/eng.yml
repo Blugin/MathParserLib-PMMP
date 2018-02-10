@@ -1,5 +1,5 @@
 ---
-mathparser-name: "MathParser"
+prefix: "[MathParser] "
 
 command-math: "math"
 command-math@usage: "/math <expression>"

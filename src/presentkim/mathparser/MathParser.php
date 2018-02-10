@@ -14,6 +14,9 @@ class MathParser extends PluginBase{
     /** @var self */
     private static $instance = null;
 
+    /** @var string */
+    public static $prefix = '';
+
     /** @return self */
     public static function getInstance() : self{
         return self::$instance;
@@ -59,10 +62,10 @@ class MathParser extends PluginBase{
             Translation::load($langfilename);
         }
 
+        self::$prefix = Translation::translate('prefix');
         if ($this->command !== null) {
             $this->getServer()->getCommandMap()->unregister($this->command);
         }
-
         $this->command = new PluginCommand(Translation::translate('command-math'), $this);
         $this->command->setExecutor(new CommandListener($this));
         $this->command->setPermission('math.cmd');
