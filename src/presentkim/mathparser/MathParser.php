@@ -2,10 +2,10 @@
 
 namespace presentkim\mathparser;
 
-use MathParser\Interpreting\Evaluator;
 use pocketmine\command\PluginCommand;
 use pocketmine\plugin\PluginBase;
 use MathParser\StdMathParser;
+use MathParser\Interpreting\Evaluator;
 use presentkim\mathparser\command\CommandListener;
 use presentkim\mathparser\util\Translation;
 
