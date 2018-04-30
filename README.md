@@ -1,4 +1,4 @@
-[![Telegram](https://img.shields.io/badge/Telegram-PresentKim-blue.svg?logo=telegram)](https://t.me/PresentKim)
+<img src="./assets/icon/index.svg" height="256" width="256">  
 
 [![License](https://img.shields.io/github/license/PMMPPlugin/MathParserLib.svg?label=License)](LICENSE)
 [![Release](https://img.shields.io/github/release/PMMPPlugin/MathParserLib.svg?label=Release)](https://github.com/PMMPPlugin/MathParserLib/releases/latest)
