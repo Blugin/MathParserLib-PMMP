@@ -1,8 +1,8 @@
 <?php
 
-namespace presentkim\mathparser\util;
+namespace blugin\mathparser\util;
 
-use presentkim\mathparser\MathParser as Plugin;
+use blugin\mathparser\MathParser as Plugin;
 
 class Translation{
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace presentkim\mathparser\command;
+namespace blugin\mathparser\command;
 
 use pocketmine\command\{
   Command, CommandExecutor, CommandSender
 };
-use presentkim\mathparser\MathParser as Plugin;
-use presentkim\mathparser\util\Translation;
+use blugin\mathparser\MathParser as Plugin;
+use blugin\mathparser\util\Translation;
 
 class CommandListener implements CommandExecutor{
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace presentkim\mathparser;
+namespace blugin\mathparser;
 
 use pocketmine\command\PluginCommand;
 use pocketmine\plugin\PluginBase;
 use MathParser\StdMathParser;
 use MathParser\Interpreting\Evaluator;
-use presentkim\mathparser\command\CommandListener;
-use presentkim\mathparser\util\Translation;
+use blugin\mathparser\command\CommandListener;
+use blugin\mathparser\util\Translation;
 
 class MathParser extends PluginBase{
 

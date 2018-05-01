@@ -1,6 +1,6 @@
 <?php
 
-namespace presentkim\mathparser\util;
+namespace blugin\mathparser\util;
 
 class Utils{
 

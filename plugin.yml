@@ -1,10 +1,10 @@
 ---
 name:             MathParserLib
-main:             presentkim\mathparser\MathParser
+main:             blugin\mathparser\MathParser
 version:          1.0.0
 api:              [3.0.0, 3.0.0-ALPHA10, 3.0.0-ALPHA11, 3.0.0-ALPHA12]
 author:           PresentKim
-website:          https://github.com/PMMPPlugin/MathParser
+website:          https://github.com/Blugin/MathParserLib-PMMP
 description:      A plugin for math-parser lib
 
 permissions:
