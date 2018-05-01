@@ -2,14 +2,15 @@
 
 namespace blugin\mathparser;
 
-use pocketmine\command\PluginCommand;
+use pocketmine\command\{
+  Command, PluginCommand, CommandExecutor, CommandSender
+};
 use pocketmine\plugin\PluginBase;
 use MathParser\StdMathParser;
 use MathParser\Interpreting\Evaluator;
-use blugin\mathparser\command\CommandListener;
 use blugin\mathparser\lang\PluginLang;
 
-class MathParser extends PluginBase{
+class MathParser extends PluginBase implements CommandExecutor{
 
     /** @var MathParser */
     private static $instance = null;
@@ -62,6 +63,27 @@ class MathParser extends PluginBase{
             $this->command->setAliases($aliases);
         }
         $this->getServer()->getCommandMap()->register('mathparser', $this->command);
+    }
+
+    /**
+     * @param CommandSender $sender
+     * @param Command       $command
+     * @param string        $label
+     * @param string[]      $args
+     *
+     * @return bool
+     */
+    public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
+        $expression = implode(' ', $args);
+        if (!empty($expression)) {
+            try{
+                $sender->sendMessage($this->language->translate('commands.math.success', [self::parse($expression)]));
+            } catch (\Exception $exception){
+                $sender->sendMessage($this->language->translate('commands.math.failure', [$exception->getMessage()]));
+            }
+            return true;
+        }
+        return false;
     }
 
     /**
