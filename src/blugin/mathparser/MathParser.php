@@ -7,18 +7,15 @@ use pocketmine\plugin\PluginBase;
 use MathParser\StdMathParser;
 use MathParser\Interpreting\Evaluator;
 use blugin\mathparser\command\CommandListener;
-use blugin\mathparser\util\Translation;
+use blugin\mathparser\lang\PluginLang;
 
 class MathParser extends PluginBase{
 
-    /** @var self */
+    /** @var MathParser */
     private static $instance = null;
 
-    /** @var string */
-    public static $prefix = '';
-
-    /** @return self */
-    public static function getInstance() : self{
+    /** @return MathParser */
+    public static function getInstance() : MathParser{
         return self::$instance;
     }
 
@@ -40,11 +37,11 @@ class MathParser extends PluginBase{
     /** @var PluginCommand */
     private $command = null;
 
+    /** @var PluginLang */
+    private $language;
+
     public function onLoad() : void{
-        if (self::$instance === null) {
-            self::$instance = $this;
-            Translation::loadFromResource($this->getResource('lang/eng.yml'), true);
-        }
+        self::$instance = $this;
     }
 
     public function onEnable() : void{
@@ -52,27 +49,16 @@ class MathParser extends PluginBase{
         if (!file_exists($dataFolder)) {
             mkdir($dataFolder, 0777, true);
         }
+        $this->language = new PluginLang($this);
 
-        $langfilename = $dataFolder . 'lang.yml';
-        if (!file_exists($langfilename)) {
-            $resource = $this->getResource('lang/eng.yml');
-            fwrite($fp = fopen("{$dataFolder}lang.yml", "wb"), $contents = stream_get_contents($resource));
-            fclose($fp);
-            Translation::loadFromContents($contents);
-        } else {
-            Translation::load($langfilename);
-        }
-
-        self::$prefix = Translation::translate('prefix');
         if ($this->command !== null) {
             $this->getServer()->getCommandMap()->unregister($this->command);
         }
-        $this->command = new PluginCommand(Translation::translate('command-math'), $this);
-        $this->command->setExecutor(new CommandListener($this));
+        $this->command = new PluginCommand($this->language->translate('commands.math'), $this);
         $this->command->setPermission('math.cmd');
-        $this->command->setDescription(Translation::translate('command-math@description'));
-        $this->command->setUsage(Translation::translate('command-math@usage'));
-        if (is_array($aliases = Translation::getArray('command-math@aliases'))) {
+        $this->command->setDescription($this->language->translate('commands.math.description'));
+        $this->command->setUsage($this->language->translate('commands.math.usage'));
+        if (is_array($aliases = $this->language->getArray('commands.math.aliases'))) {
             $this->command->setAliases($aliases);
         }
         $this->getServer()->getCommandMap()->register('mathparser', $this->command);
@@ -87,8 +73,22 @@ class MathParser extends PluginBase{
         return $this->command;
     }
 
-    /** @param PluginCommand $command */
-    public function setCommand(PluginCommand $command) : void{
-        $this->command = $command;
+    /**
+     * @return PluginLang
+     */
+    public function getLanguage() : PluginLang{
+        return $this->language;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSourceFolder() : string{
+        $pharPath = \Phar::running();
+        if (empty($pharPath)) {
+            return dirname(__FILE__, 4) . DIRECTORY_SEPARATOR;
+        } else {
+            return $pharPath . DIRECTORY_SEPARATOR;
+        }
     }
 }
