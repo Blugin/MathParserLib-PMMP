@@ -40,7 +40,7 @@ if (class_exists(MathParser::class)) {
 }
 ````  
   
-See instance in [VirtualChest-PMMP/PriceSubCommand](https://github.com/Blugin/VirtualChest-PMMP/blob/master/src/blugin/virtualchest/command/subcommands/PriceSubCommand.php#L31)
+See instance in [VirtualChest-PMMP/PriceSubCommand](https://github.com/Blugin/VirtualChest-PMMP/blob/master/src/blugin/virtualchest/command/subcommands/PriceSubCommand.php#L31-L34)
   
   
   
