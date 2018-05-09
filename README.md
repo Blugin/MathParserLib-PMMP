@@ -24,7 +24,7 @@ use blugin\mathparser\MathParser;
   
 #### 3. Use MathParser 
 ````PHP  
-MathParser::parse((string $expression, array $variables = []) : float
+MathParser::parse(string $expression, array $variables = []) : float
 ````  
   
 #### 4. Example
@@ -48,7 +48,7 @@ MathParser::parse() is just for simple use.
 use MathParser\StdMathParser;
 use MathParser\Interpreting\Evaluator;
 
-function parse((string $expression, array $variables = []) : float{
+function parse(string $expression, array $variables = []) : float{
   return (float) (new StdMathParser())->parse($expression)->accept(new Evaluator($variables));
 }
 
