@@ -43,6 +43,7 @@ See instance in [VirtualChest-PMMP/PriceSubCommand](https://github.com/Blugin/Vi
   
   
 #### +. You can use without import blugin\mathparser\MathParser
+MathParser::parse() is just for simple use.
 ````PHP  
 use MathParser\StdMathParser;
 use MathParser\Interpreting\Evaluator;
