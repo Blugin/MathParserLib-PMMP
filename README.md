@@ -15,20 +15,17 @@ A plugin for math-parser lib for PocketMine-MP
 |                   | code                            |
 | ----------------- | ------------------------------- |
 | strong dependency | `depend: ['MathParserLib']`     |
-| soft dependency   | `softdepend: ['MathParserLib']` |
-  
+| soft dependency   | `softdepend: ['MathParserLib']` |  
   
 #### 2. Import blugin\mathparser\MathParser
 ````PHP  
 use blugin\mathparser\MathParser;
 ````  
   
-  
 #### 3. Use MathParser 
 ````PHP  
 MathParser::parse((string $expression, array $variables = []) : float
 ````  
-  
   
 #### 4. Example
 ````PHP  
@@ -42,7 +39,7 @@ if (class_exists(MathParser::class)) {
     // Do something when not exists MathParser
 }
 ````  
-
+  
 See instance in [VirtualChest-PMMP/PriceSubCommand](https://github.com/Blugin/VirtualChest-PMMP/blob/master/src/blugin/virtualchest/command/subcommands/PriceSubCommand.php#L31)
   
   
@@ -60,10 +57,3 @@ See instance in [VirtualChest-PMMP/PriceSubCommand](https://github.com/Blugin/Vi
 | permission  | default | description  |
 | ----------- | ------- | ------------ |
 | math.cmd    | true    | main command |
-  
-  
-  
-  
-## ChangeLog
-### v1.0.0 [![Source](https://img.shields.io/badge/source-v1.0.0-blue.png?label=source)](https://github.com/PMMPPlugin/MathParserLib/tree/v1.0.0) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/MathParserLib/v1.0.0/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/MathParserLib/releases/v1.0.0)
-- First release
