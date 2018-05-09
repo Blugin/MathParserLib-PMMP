@@ -6,23 +6,64 @@
 
 
 A plugin for math-parser lib for PocketMine-MP
+(lib from https://github.com/mossadal/math-parser)
 
+## For developers
+  
+#### 1. Add dependency property into plugin.yml (in two way)  
+
+|                   | code                            |
+| ----------------- | ------------------------------- |
+| strong dependency | `depend: ['MathParserLib']`     |
+| soft dependency   | `softdepend: ['MathParserLib']` |
+  
+  
+#### 2. Import blugin\mathparser\MathParser
+````PHP  
+use blugin\mathparser\MathParser;
+````  
+  
+  
+#### 3. Use MathParser 
+````PHP  
+MathParser::parse((string $expression, array $variables = []) : float
+````  
+  
+  
+#### 4. Example
+````PHP  
+echo MathParser::parse('a^2+10', ['a' => 10]); // Result : 110
+````  
+When you select soft dependency use like this : 
+````PHP  
+if (class_exists(MathParser::class)) {
+    echo MathParser::parse('a^2+10', ['a' => 10]); // Result : 110
+}else{
+    // Do something when not exists MathParser
+}
+````  
+
+See instance in [VirtualChest-PMMP/PriceSubCommand](https://github.com/Blugin/VirtualChest-PMMP/blob/master/src/blugin/virtualchest/command/subcommands/PriceSubCommand.php#L31)
+  
+  
+  
+  
 ## Command
 | command | arguments      | description  |
 | ------- | -------------- | ------------ |
 | /math   | \<expression\> | main command |
-
-
-
-
+  
+  
+  
+  
 ## Permission
 | permission  | default | description  |
 | ----------- | ------- | ------------ |
 | math.cmd    | true    | main command |
-
-
-
-
+  
+  
+  
+  
 ## ChangeLog
 ### v1.0.0 [![Source](https://img.shields.io/badge/source-v1.0.0-blue.png?label=source)](https://github.com/PMMPPlugin/MathParserLib/tree/v1.0.0) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/MathParserLib/v1.0.0/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/MathParserLib/releases/v1.0.0)
 - First release
