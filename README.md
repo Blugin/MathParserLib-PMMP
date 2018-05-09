@@ -31,7 +31,7 @@ MathParser::parse((string $expression, array $variables = []) : float
 ````PHP  
 echo MathParser::parse('a^2+10', ['a' => 10]); // Result : 110
 ````  
-When you select soft dependency use like this : 
+When you select soft dependency, use like this : 
 ````PHP  
 if (class_exists(MathParser::class)) {
     echo MathParser::parse('a^2+10', ['a' => 10]); // Result : 110
