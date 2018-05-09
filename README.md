@@ -39,10 +39,20 @@ if (class_exists(MathParser::class)) {
     // Do something when not exists MathParser
 }
 ````  
-  
 See instance in [VirtualChest-PMMP/PriceSubCommand](https://github.com/Blugin/VirtualChest-PMMP/blob/master/src/blugin/virtualchest/command/subcommands/PriceSubCommand.php#L31-L34)
   
   
+#### +. You can use without import blugin\mathparser\MathParser
+````PHP  
+use MathParser\StdMathParser;
+use MathParser\Interpreting\Evaluator;
+
+function parse((string $expression, array $variables = []) : float{
+  return (float) (new StdMathParser())->parse($expression)->accept(new Evaluator($variables));
+}
+
+echo parse('a^2+10', ['a' => 10]); // Result : 110
+````  
   
   
 ## Command
