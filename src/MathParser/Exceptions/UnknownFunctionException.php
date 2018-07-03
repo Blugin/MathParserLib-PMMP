@@ -15,23 +15,20 @@ namespace MathParser\Exceptions;
  *
  * This should not happen under normal circumstances.
  */
-class UnknownFunctionException extends MathParserException
-{
-    /** Constructor. Create a UnknownFunctionException */
-    public function __construct($operator)
-    {
-        parent::__construct("Unknown function $operator.");
+class UnknownFunctionException extends MathParserException{
+	/** Constructor. Create a UnknownFunctionException */
+	public function __construct($operator){
+		parent::__construct("Unknown function $operator.");
 
-        $this->data = $operator;
-    }
+		$this->data = $operator;
+	}
 
-    /**
-     * Get the unkown function that was encountered.
-     *
-     * @retval string
-     */
-    public function getFunction()
-    {
-    	return $this->data;
-    }
+	/**
+	 * Get the unkown function that was encountered.
+	 *
+	 * @retval string
+	 */
+	public function getFunction(){
+		return $this->data;
+	}
 }

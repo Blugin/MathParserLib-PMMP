@@ -7,29 +7,26 @@
  *
  */
 
- namespace MathParser\Exceptions;
+namespace MathParser\Exceptions;
 
- /**
-  * Exception thrown when tokenizing expressions containing illegal
-  * characters.
-  */
-class UnknownTokenException extends MathParserException
-{
-    /** Constructor. Create a UnknownTokenException */
-    public function __construct($name)
-    {
-        parent::__construct("Unknown token $name encountered");
+/**
+ * Exception thrown when tokenizing expressions containing illegal
+ * characters.
+ */
+class UnknownTokenException extends MathParserException{
+	/** Constructor. Create a UnknownTokenException */
+	public function __construct($name){
+		parent::__construct("Unknown token $name encountered");
 
-        $this->data = $name;
-    }
+		$this->data = $name;
+	}
 
-    /**
-     * Get the unknown token that was encountered.
-     *
-     * @retval string
-     */
-    public function getName()
-    {
-    	return $this->data;
-    }
+	/**
+	 * Get the unknown token that was encountered.
+	 *
+	 * @retval string
+	 */
+	public function getName(){
+		return $this->data;
+	}
 }

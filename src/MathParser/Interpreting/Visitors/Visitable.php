@@ -21,6 +21,7 @@
  * - *Visitor* should be implemented by AST transformers, and consists of one function
  *      for each subclass of Node, i.e. `visitXXXNode()`
  */
+
 namespace MathParser\Interpreting\Visitors;
 
 /**
@@ -41,16 +42,15 @@ namespace MathParser\Interpreting\Visitors;
  * $node->accept();
  * ~~~
  */
-interface Visitable
-{
-    /**
-     * Single function in the Visitable interface
-     *
-     * Calling the accept() function on a Visitable class,
-     * i.e. a Node (or subclass thereof) causes the supplied
-     * Visitor to traverse the AST.
-     *
-     * @param Visitor $visitor
-     **/
-    function accept(Visitor $visitor);
+interface Visitable{
+	/**
+	 * Single function in the Visitable interface
+	 *
+	 * Calling the accept() function on a Visitable class,
+	 * i.e. a Node (or subclass thereof) causes the supplied
+	 * Visitor to traverse the AST.
+	 *
+	 * @param Visitor $visitor
+	 **/
+	function accept(Visitor $visitor);
 }

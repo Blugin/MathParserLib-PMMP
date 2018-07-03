@@ -14,45 +14,41 @@ use MathParser\Interpreting\Visitors\Visitor;
 /**
  * AST node representing a number (int or float)
  */
-class NumberNode extends Node
-{
-    /** int|float $value The value of the represented number. */
-    private $value;
+class NumberNode extends Node{
+	/** int|float $value The value of the represented number. */
+	private $value;
 
-    /** Constructor. Create a NumberNode with given value. */
-    function __construct($value)
-    {
-        $this->value = $value;
-    }
+	/** Constructor. Create a NumberNode with given value. */
+	function __construct($value){
+		$this->value = $value;
+	}
 
-    /**
-     * Returns the value
-     * @retval int|float
-     */
-    public function getValue()
-    {
-        return $this->value;
-    }
+	/**
+	 * Returns the value
+	 *
+	 * @retval int|float
+	 */
+	public function getValue(){
+		return $this->value;
+	}
 
-    /**
-     * Implementing the Visitable interface.
-     */
-    public function accept(Visitor $visitor)
-    {
-        return $visitor->visitNumberNode($this);
-    }
+	/**
+	 * Implementing the Visitable interface.
+	 */
+	public function accept(Visitor $visitor){
+		return $visitor->visitNumberNode($this);
+	}
 
-    /** Implementing the compareTo abstract method. */
-    public function compareTo($other)
-    {
-        if ($other === null) {
-            return false;
-        }
-        if (!($other instanceof NumberNode)) {
-            return false;
-        }
+	/** Implementing the compareTo abstract method. */
+	public function compareTo($other){
+		if($other === null){
+			return false;
+		}
+		if(!($other instanceof NumberNode)){
+			return false;
+		}
 
-        return $this->getValue() == $other->getValue();
-    }
+		return $this->getValue() == $other->getValue();
+	}
 
 }

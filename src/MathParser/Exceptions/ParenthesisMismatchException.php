@@ -7,29 +7,26 @@
  *
  */
 
- namespace MathParser\Exceptions;
+namespace MathParser\Exceptions;
 
- /**
-  * Exception thrown when parsing expressions having non-matching left and
-  * right parentheses.
-  */
-class ParenthesisMismatchException extends MathParserException
-{
-    /** Constructor. Create a ParenthesisMismatchException */
-    public function __construct($data = null)
-    {
-        parent::__construct("Unable to match delimiters.");
+/**
+ * Exception thrown when parsing expressions having non-matching left and
+ * right parentheses.
+ */
+class ParenthesisMismatchException extends MathParserException{
+	/** Constructor. Create a ParenthesisMismatchException */
+	public function __construct($data = null){
+		parent::__construct("Unable to match delimiters.");
 
-        $this->data = $data;
-    }
+		$this->data = $data;
+	}
 
-    /**
-     * Get the incorrect data that was encountered.
-     *
-     * @retval string
-     */
-    public function getData()
-    {
-        return $this->data;
-    }
+	/**
+	 * Get the incorrect data that was encountered.
+	 *
+	 * @retval string
+	 */
+	public function getData(){
+		return $this->data;
+	}
 }

@@ -12,9 +12,8 @@
  *
  * Interfaces for Nodes, in particular Node factories.
  */
-namespace MathParser\Parsing\Nodes\Interfaces;
 
-use MathParser\Parsing\Nodes\NumberNode;
+namespace MathParser\Parsing\Nodes\Interfaces;
 
 /**
  * Interface for construction of ExpressionNode, the
@@ -22,14 +21,14 @@ use MathParser\Parsing\Nodes\NumberNode;
  * some simplification of the operands.
  *
  */
-interface ExpressionNodeFactory
-{
-    /**
-    * Factory method to create an ExpressionNode with given operands.
-    *
-    * @param mixed $leftOperand
-    * @param mixed $rightOperand
-    * @retval ExpressionNode|NumberNode
-    */
-    public function makeNode($leftOperand, $rightOperand);
+interface ExpressionNodeFactory{
+	/**
+	 * Factory method to create an ExpressionNode with given operands.
+	 *
+	 * @param mixed $leftOperand
+	 * @param mixed $rightOperand
+	 *
+	 * @retval ExpressionNode|NumberNode
+	 */
+	public function makeNode($leftOperand, $rightOperand);
 }
